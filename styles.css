@@ -17,10 +17,11 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #16D9E3;
+  color: #16d9e3;
 }
 
-.start {
+.start,
+.again {
   font-size: 1.5rem;
 }
 
@@ -76,17 +77,19 @@ h1 {
 
 .primary {
   color: #e3d516;
+  width: 100%;
 }
 
 .board {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 700px;
   height: 700px;
   background: linear-gradient(135deg, #445970 0%, #62978f 100%);
-  box-shadow: -8px -8px 20px #2A333D, 10px 7px 20px #475462;
+  box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
   border-radius: 30px;
   overflow: hidden;
 }

@@ -51,8 +51,15 @@ function setTime(value) {
 }
 
 function finishGame() {
-  board.innerHTML = `<h1>Счёт: <span class="primary">${score}</span></h1>`;
+  board.innerHTML = `<h1>Счёт: <span class="primary">${score}</span></h1>
+  <a href="#" class="again" id="again">Ещё раз?</a>`;
   timeEl.parentNode.classList.add("hide");
+
+  const againBtn = document.querySelector("#again");
+  againBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    location.reload();
+  });
 }
 
 function createCircle() {
@@ -84,4 +91,12 @@ function getRandomColor() {
     color += hexSymbols[Math.floor(Math.random() * hexSymbols.length)];
   }
   return "#" + color;
+}
+
+function win() {
+  function kill() {
+    const circle = document.querySelector(".circle");
+    if (circle) circle.click();
+  }
+  setInterval(kill, 50);
 }
